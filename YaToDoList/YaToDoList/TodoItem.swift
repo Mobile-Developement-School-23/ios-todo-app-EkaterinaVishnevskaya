@@ -15,9 +15,9 @@ enum Importance: String {
 
 struct TodoItem {
     let id: String
-    let text: String
-    let importance: Importance
-    let deadline: Date?
+    var text: String
+    var importance: Importance
+    var deadline: Date?
     let done: Bool
     let creationDate: Date
     let changeDate: Date?
