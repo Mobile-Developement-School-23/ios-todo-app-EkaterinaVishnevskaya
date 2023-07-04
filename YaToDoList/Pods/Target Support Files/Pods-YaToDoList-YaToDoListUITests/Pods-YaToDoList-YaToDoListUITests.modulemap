@@ -1,0 +1,6 @@
+framework module Pods_YaToDoList_YaToDoListUITests {
+  umbrella header "Pods-YaToDoList-YaToDoListUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

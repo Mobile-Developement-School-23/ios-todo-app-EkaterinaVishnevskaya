@@ -1,5 +1,5 @@
 //
-//  TodoItem+CSVswift.swift
+//  TodoItem+CSV.swift
 //  YaToDoList
 //
 //  Created by Екатерина Вишневская on 16.06.2023.
@@ -9,20 +9,20 @@ import Foundation
 
 extension TodoItem {
     static func parse(csv: String) -> TodoItem? {
-        let a = csv.split(separator: ",", omittingEmptySubsequences: false).map { String($0)}
-        guard a.count == 7 else {
+        let split = csv.split(separator: ";", omittingEmptySubsequences: false).map { String($0)}
+        guard split.count == 7 else {
             return nil
         }
-        let id = a[0]
-        let text = a[1]
+        let id = split[0]
+        let text = split[1]
         let importance: Importance?
-        switch a[2] {
+        switch split[2] {
         case "":
-            importance = .normal;
+            importance = .normal
         case "важная":
-            importance = .important;
+            importance = .important
         case "неважная":
-            importance = .unimportant;
+            importance = .unimportant
         default:
             importance = nil
         }
@@ -31,43 +31,50 @@ extension TodoItem {
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        let deadline = dateFormatter.date(from: a[3])
+        let deadline = dateFormatter.date(from: split[3])
         let done: Bool
-        switch a[4] {
-        case "true": done = true;
+        switch split[4] {
+        case "true":
+            done = true
         default:
             done = false
         }
-        let creationDate = dateFormatter.date(from: a[5])
+        let creationDate = dateFormatter.date(from: split[5])
         guard let creationDate = creationDate else {
             return nil
         }
-        let changeDate = dateFormatter.date(from: a[6])
-        let item = TodoItem(id: id,text: text, importance: importance, deadline: deadline, done: done, creationDate: creationDate, changeDate: changeDate)
+        let changeDate = dateFormatter.date(from: split[6])
+        let item = TodoItem(id: id,
+                            text: text,
+                            importance: importance,
+                            deadline: deadline,
+                            done: done,
+                            creationDate: creationDate,
+                            changeDate: changeDate)
         return item
     }
     var csv: String {
-        var s = id+","+text+","
+        var str = id+","+text+";"
         switch importance {
         case .unimportant:
-            s+="неважная"+",";
+            str+="неважная"+";"
         case .important:
-            s+="важная"+",";
+            str+="важная"+";"
         case .normal:
-            s+=",";
+            str+=","
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         if let deadline = deadline {
-            s+=dateFormatter.string(from: deadline) + ","
+            str+=dateFormatter.string(from: deadline) + ";"
         } else {
-            s+=","
+            str+=";"
         }
-        s += done ? "true," : "false,"
-        s+=dateFormatter.string(from: creationDate)+","
+        str += done ? "true," : "false,"
+        str+=dateFormatter.string(from: creationDate)+";"
         if let changeDate = changeDate {
-            s+=dateFormatter.string(from: changeDate)
+            str+=dateFormatter.string(from: changeDate)
         }
-        return s
+        return str
     }
 }
