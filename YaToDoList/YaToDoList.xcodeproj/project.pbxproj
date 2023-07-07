@@ -28,6 +28,7 @@
 		C4807C992A3A1ABB00B8093B /* YaToDoListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4807C982A3A1ABB00B8093B /* YaToDoListUITestsLaunchTests.swift */; };
 		C4807CAC2A3BA36C00B8093B /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4807CAB2A3BA36C00B8093B /* FileCache.swift */; };
 		C4807CAE2A3C9E2B00B8093B /* TodoItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4807CAD2A3C9E2B00B8093B /* TodoItemTest.swift */; };
+		C48178642A58815E00336A7F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48178632A58815E00336A7F /* Network.swift */; };
 		C48685702A4CA31100444D30 /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = C486856F2A4CA31100444D30 /* CocoaLumberjack */; };
 		C487444B2A4F3CCB00B1536F /* TodoItem in Frameworks */ = {isa = PBXBuildFile; productRef = C487444A2A4F3CCB00B1536F /* TodoItem */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		C4807C982A3A1ABB00B8093B /* YaToDoListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaToDoListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C4807CAB2A3BA36C00B8093B /* FileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCache.swift; sourceTree = "<group>"; };
 		C4807CAD2A3C9E2B00B8093B /* TodoItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTest.swift; sourceTree = "<group>"; };
+		C48178632A58815E00336A7F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		C48744492A4F3C6500B1536F /* TodoItem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TodoItem; path = ../../../TodoItem; sourceTree = "<group>"; };
 		C87CFC257FC67D5D9EA0A0CE /* Pods_YaToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC174B2B98441ADBAC2D6EF /* Pods-YaToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaToDoList.debug.xcconfig"; path = "Target Support Files/Pods-YaToDoList/Pods-YaToDoList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				C4807C722A3A1AB200B8093B /* AppDelegate.swift */,
 				C4807C742A3A1AB200B8093B /* SceneDelegate.swift */,
 				C4807C762A3A1AB200B8093B /* ViewController.swift */,
+				C48178632A58815E00336A7F /* Network.swift */,
 				C4807C782A3A1AB200B8093B /* Main.storyboard */,
 				C4807C7E2A3A1ABA00B8093B /* Assets.xcassets */,
 				C4807C802A3A1ABA00B8093B /* LaunchScreen.storyboard */,
@@ -458,6 +461,7 @@
 			files = (
 				C4807C772A3A1AB200B8093B /* ViewController.swift in Sources */,
 				C4807C732A3A1AB200B8093B /* AppDelegate.swift in Sources */,
+				C48178642A58815E00336A7F /* Network.swift in Sources */,
 				C4807C752A3A1AB200B8093B /* SceneDelegate.swift in Sources */,
 				C4807CAC2A3BA36C00B8093B /* FileCache.swift in Sources */,
 				C472A24A2A46A43700F60F3D /* ItemViewController.swift in Sources */,
